@@ -14,19 +14,15 @@
         <div class="card-header">
             <h3>HIDROAPP </h3>
             <h3>Registro </h3>
-            <!-- <div class="d-flex justify-content-end social_icon">
-                <span><i class="fab fa-facebook-square"></i></span>
-                <span><i class="fab fa-google-plus-square"></i></span>
-                <span><i class="fab fa-twitter-square"></i></span>
-            </div> -->
+
         </div>
         <div class="card-body">
-            <form method="POST" action="/signup">
+            <form method="POST" action="/signup" class="needs-validation" novalidate>
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input name="email" type="text" class="form-control" placeholder="Email del usuario">
+                    <input name="email" type="email" class="form-control" placeholder="Email del usuario" required>
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
                     <div class="alert alert-danger">
@@ -34,22 +30,31 @@
                     </div>
                     {% endif %}
                     {% endwith %}
+                    <div class="alert alert-danger invalid-feedback" style="margin-bottom: 0px !important;">
+                        Por favor ingrese un email valido
+                      </div>
                 </div>
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input name="username" type="text" class="form-control" placeholder="Nombre de usuario">
-
+                    <input name="username" type="text" class="form-control" placeholder="Nombre de usuario" required>
+                    <div class="alert alert-danger invalid-feedback" style="margin-bottom: 0px !important;">
+                        Por favor ingrese un nombre de usuario valido
+                      </div>
                 </div>
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
-                    <input name="password" type="password" class="form-control" placeholder="Contraseña">
+                    <input name="password" type="password" class="form-control" minlength="8" placeholder="Contraseña" required>
+                    <div class="alert alert-danger invalid-feedback" style="margin-bottom: 0px !important;">
+                      La contraseña debe contar con al menos 8 caracteres
+                      </div>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Login" class="btn float-right login_btn">
+                    <a href="{{url_for('auth.login')}}" class="btn float-right btn-danger">Cancelar</a>
+                    <input type="submit" value="Guardar Registro" class="btn  float-right btn-info">
                 </div>
             </form>
         </div>

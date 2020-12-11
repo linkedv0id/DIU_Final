@@ -6,7 +6,7 @@ from . import db
 auth = Blueprint('auth', __name__)
 
 
-@auth.route('/login')
+@auth.route('/')
 def login():
     return render_template('login.html')
 
@@ -31,6 +31,7 @@ def signup_post():
     # add the new user to the database
     db.session.add(new_user)
     db.session.commit()
+    flash('Usuario creado correctamente')
 
     return redirect(url_for('auth.login'))
 

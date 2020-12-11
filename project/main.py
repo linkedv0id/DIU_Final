@@ -3,7 +3,7 @@ from . import db
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
+@main.route('/inicio')
 def index():
     return render_template('index.html')
 

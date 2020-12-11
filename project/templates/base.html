@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <!--Fontawesome CDN-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="icon" href="/static/images/favicon.png">
 
     {% block extraCss %}
     
     {% endblock %}
-    <link rel="icon" href="/static/images/favicon.png">
 
 </head>
 
@@ -21,7 +21,7 @@
 
     {% block navbar %}
         <div class="sidebar" style="background: #0278ae;">
-            <div class="text-center border-light shadow-sm brand"><a class="navbar-brand text-center text-white" href='{{url_for("main.index")}}' style="font-family: Lato, sans-serif;color: fff;text-align: center;">Logo</a></div>
+            <div class="text-center border-light shadow-sm brand"><a class="navbar-brand text-center text-white" href='{{url_for("main.index")}}' style="font-family: Lato, sans-serif;color: #ffffff;text-align: center;">Logo</a></div>
             <nav class="navbar navbar-dark navbar-expand text-center align-items-center align-content-center align-self-center"
                 style="text-align: center;font-family: Lato, sans-serif;">
                 <div class="container-fluid">
@@ -33,7 +33,7 @@
                         <li class="nav-item text-center border rounded shadow" style="text-align: center;margin: 2px;width: 170px;"><a class="nav-link text-center text-white" href="page2.html" style="font-family: Lato, sans-serif;color: fff;text-align: center;margin: 2px;">Cálculo</a></li>
                         <li class="nav-item text-center text-white border rounded shadow" style="text-align: center;margin: 2px;"><a class="nav-link text-center text-white" href="page2.html" style="font-family: Lato, sans-serif;color: fff;text-align: center;margin: 2px;width: 170px;">Historial</a></li>
                         <li class="nav-item text-center text-white border rounded shadow"
-                            style="text-align: center;margin: 2px;"><a class="nav-link text-center text-white" href="page2.html" style="font-family: Lato, sans-serif;color: fff;text-align: center;margin: 2px;width: 170px;">Administración</a></li>
+                            style="text-align: center;margin: 2px;"><a class="nav-link text-center text-white" href="page2.html" style="font-family: Lato, sans-serif;color: #ffffff;text-align: center;margin: 2px;width: 170px;">Administración</a></li>
                         <li class="nav-item text-center text-white border rounded shadow"
                             style="text-align: center;margin: 2px;"></li>
                     </ul>
@@ -46,7 +46,7 @@
                 <li class="nav-item text-center"></li>
                 <li class="nav-item text-center border rounded shadow" style="text-align: center;margin: 2px;width: 170px;"></li>
                 <li class="nav-item text-center text-white border rounded shadow" style="text-align: center;margin: 2px;"></li>
-                <li class="nav-item text-center text-white border rounded shadow" style="text-align: center;margin: 2px;"><a class="nav-link text-center text-white" href='{{url_for("auth.logout")}}' style="font-family: Lato, sans-serif;color: fff;text-align: center;margin: 2px;width: 170px;">Salir</a></li>
+                <li class="nav-item text-center text-white border rounded shadow" style="text-align: center;margin: 2px;"><a class="nav-link text-center text-white" href='{{url_for("auth.logout")}}' style="font-family: Lato, sans-serif;color: #ffffff;text-align: center;margin: 2px;width: 170px;">Salir</a></li>
             </ul>
         </div>
     {% endblock %}
@@ -57,6 +57,26 @@
         {% endblock %}
     </div>
     <script src="/static/assets/js/jquery.min.js"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+        </script>
 </body>
 
 </html>
