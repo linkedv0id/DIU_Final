@@ -1,5 +1,5 @@
 html,body{
-    background-image: url('../../images/1-magdeburg-water-bridge-crop-u59876.jpg');
+    background-image: url('../../images/fondo.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
@@ -10,6 +10,11 @@ html,body{
     align-content: center;
     }
     
+    .logo{
+        border-radius: 50%;
+        width: 40%;
+    }
+
     .card{
     height: auto;
     margin-top: auto;
