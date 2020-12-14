@@ -8,10 +8,13 @@
 
 {% endblock %}
 
+{% block typeContainer %}
+<div class="container-fluid" style="padding-left: 0px;">
+{% endblock %}
+
 {% block content %}
-<div class="container">
     <div class="d-flex justify-content-center h-100">
-        <div class="card">
+        <div class="card" style="margin-top: 5%;">
             <div class="card-header">
                 <div class="d-flex justify-content-center">
                     <img class="logo" src="{{url_for('static', filename='images/logo.jpeg')}}" alt="">
@@ -69,5 +72,8 @@
             </div>
         </div>
     </div>
-</div>
+{% endblock %}
+
+{% block footer %}
+
 {% endblock %}
